@@ -1,0 +1,40 @@
+.signup-section {
+  padding: 6rem 0;
+  background-image: linear-gradient(to right bottom, $lightColor, $darkColor);
+  .signup {
+    background-size: 100%;
+    padding: 3rem;
+    background-image: linear-gradient(
+        102deg,
+        rgba($whiteColor, 0.8) 0%,
+        rgba($whiteColor, 0.8) 50%,
+        transparent 50%
+      ),
+      url("../../../assets/images/logos/signup.png");
+    border-radius: 10px;
+    box-shadow: 0 4rem 4rem rgba($blackColor, 0.5);
+
+    @include media(tablet-land) {
+      width: 100%;
+      background-size: cover;
+    }
+
+    @include media(tablet) {
+      background-image: linear-gradient(
+          to left,
+          rgba($whiteColor, 0.7) 0%,
+          rgba($whiteColor, 0.7) 35%,
+          transparent 40%
+        ),
+        url("../../../assets/images/logos/signup.png");
+    }
+
+    &-form-box {
+      width: 50%;
+
+      @include media(tablet) {
+        width: 100%;
+      }
+    }
+  }
+}

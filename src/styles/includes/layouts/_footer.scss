@@ -1,0 +1,81 @@
+.footer {
+  padding: 10rem 0;
+  background-color: $footerColor;
+  font-size: 1.5rem;
+
+  @include media(tablet){
+    padding: 7rem 0;
+  }
+
+  &-logobox {
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+
+  &-logo {
+    width: 300px;
+  }
+
+  &-nav {
+    border-top: 1px solid $lightWhiteColor;
+    padding-top: 1.8rem;
+    display: inline-block;
+
+    @include media(tablet){
+      width: 100%;
+    }
+  }
+
+  &-list {
+    list-style: none;
+  }
+
+  &-link {
+    transition: all .4s;
+    &:not(:first-child) {
+      margin-left: 1.2rem;
+
+      @include media(phone){
+        margin-left: .6rem;
+      }
+
+    }
+
+    &:link,
+    &:visited {
+      color: $lightWhiteColor;
+      text-decoration: none;
+      text-transform: uppercase;
+      display: inline-block;
+    }
+
+    &:hover,
+    &:active {
+      color: $medColor;
+      font-weight: 700;
+      box-shadow: 0 1rem 2rem rgba($blackColor, .6);
+      transform: scale(1.1);
+    }
+  }
+
+  &-details {
+    color: $lightWhiteColor;
+    padding-top: 1.8rem;
+    width: 70%;
+    float: right;
+
+    &:not(:last-child) {
+      border-top: 1px solid $lightWhiteColor;
+    }
+
+    @include media(tablet){
+      width: 100%;
+      float: none;
+      
+
+      &:not(:last-child) {
+        border-top: none;
+      }
+    }
+  }
+}

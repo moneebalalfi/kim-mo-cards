@@ -1,0 +1,66 @@
+
+.images-group {
+  position: relative;
+
+  &:hover .image:not(:hover){
+    transform: scale(.95);
+  }
+
+  .image {
+    width: 55%;
+    box-shadow: 0 20px 40px rgba($blackColor, $alpha: .2);
+    border-radius: 2px;
+    position: absolute;
+    outline-offset: 1rem;
+    z-index: 10;
+    transition: all .5s;
+
+    @include media(tablet) {
+      position: relative;
+      float: left;
+      width: 33.33333%;
+      box-shadow: 0 40px 60px rgba($blackColor, $alpha: .2);
+    } 
+    
+    &-img1 {
+      left: 0;
+      top: -2rem;
+
+      @include media(tablet) {
+        left: 0;
+        top: 1rem;
+        transform: scale(1.2);
+      } 
+    }
+    
+    &-img2 {
+      right: 0;
+      top: 2rem;
+
+      @include media(tablet) {
+        left: 0;
+        top: 0;
+        transform: scale(1.4);
+        z-index: 1000;
+      } 
+    }
+    
+    &-img3 {
+      left: 20%;
+      top: 10rem;
+
+      @include media(tablet) {
+        left: 0;
+        top: 1rem;
+        transform: scale(1.2);
+      } 
+    }
+    
+    &:hover {
+      outline: 1.6rem solid $lightColor;
+      box-shadow: 0 4rem 5rem rgba($blackColor, $alpha: .5);
+      z-index: 20;
+      transform: scale(1.2) translateY(4rem);
+    }
+  }
+}

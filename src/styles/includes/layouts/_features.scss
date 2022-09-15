@@ -1,0 +1,55 @@
+.section-features {
+  padding: 10rem 0;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($lightColor, 0.8),
+      rgba($darkColor, 0.8)
+    ),
+    url("../../../assets/images/about/features-bg.jpg");
+  background-size: cover;
+  transform: skewY(-7deg);
+  & > * {
+    transform: skewY(7deg);
+  }
+
+  margin-top: -10rem;
+
+  .feature-box {
+    -webkit-user-select: none; /* Chrome all / Safari all */
+    -moz-user-select: none; /* Firefox all */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none; /* Likely future */
+
+    background-color: rgba($whiteColor, $alpha: 0.8);
+    font-size: 1.5rem;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 1rem 4rem rgba($blackColor, 0.3);
+    padding: 1.5rem;
+    transform: skewY(7deg);
+    transition: all 0.5s;
+
+    @include media(tablet) {
+      padding: 2rem;
+      transform: none;
+    }
+
+    &-icon {
+      font-size: 7rem;
+      color: $darkColor;
+      display: inline-block;
+      background-image: linear-gradient(to right, $lightColor, $darkColor);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    &-text {
+      line-height: 1.6;
+    }
+
+    &:hover {
+      transform: translate(-2rem) scale(1.1);
+    }
+  }
+}

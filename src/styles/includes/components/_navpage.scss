@@ -1,0 +1,143 @@
+.navpage {
+  &-checkbox {
+    display: none;
+  }
+
+  &-button {
+    background-color: #fff;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    position: fixed;
+    top: 30px;
+    right: 33px;
+    z-index: 1000;
+    box-shadow: 0 1rem 2.4rem rgba($blackColor, 0.4);
+    @include media(phone) {
+      width: 58px;
+      height: 60px;
+      top: 10px;
+      right: 22px;
+    }
+
+    .closed {
+      font-size: 5rem;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 1;
+    }
+
+    .opened {
+      font-size: 5rem;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+    }
+  }
+
+  &-bg {
+    background-color: red;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    top: 34px;
+    right: 36px;
+    background-image: radial-gradient($lightColor, $medColor, $darkColor);
+    z-index: 500;
+    transition: transform 0.5s cubic-bezier(0.32, 0, 0.67, 0);
+
+    @include media(phone) {
+      width: 40px;
+      height: 40px;
+      position: fixed;
+      top: 20px;
+      right: 35px;
+    }
+  }
+
+  .nav {
+    height: 100vh;
+    position: fixed;
+    z-index: 700;
+    opacity: 0;
+    width: 0;
+    transition: all 0.5s cubic-bezier(0.36, 0, 0.66, -0.56);
+    visibility: hidden;
+
+    &-list {
+      list-style: none;
+      position: absolute;
+      width: 100%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      width: 100%;
+    }
+
+    &-item {
+      margin: 2.5rem;
+    }
+
+    &-link {
+      &:link,
+      &:visited {
+        text-decoration: none;
+        padding: 1rem 1.5rem;
+        font-size: 3.2rem;
+        font-weight: 300;
+        display: inline-block;
+        color: $whiteColor;
+        text-transform: uppercase;
+        background-image: linear-gradient(
+          120deg,
+          transparent 0%,
+          transparent 50%,
+          $whiteColor 50%
+        );
+        background-size: 223%;
+        transition: all 0.7s;
+      }
+
+      &:hover,
+      &:active {
+        background-position: 280%;
+        color: $lightColor;
+      }
+    }
+  }
+
+  &-checkbox:checked ~ &-bg {
+    transform: scale(100);
+  }
+
+  &-checkbox:checked ~ &-nav {
+    opacity: 1;
+    width: 100%;
+    visibility: visible;
+  }
+
+  &-checkbox:checked ~ &-button &-opened {
+    opacity: 1;
+  }
+
+  &-checkbox:checked ~ &-button &-closed {
+    opacity: 0;
+  }
+
+  .navpage-button {
+    display: flex;
+    cursor: pointer;
+
+    .navpage-button-icon {
+      width: 35px;
+      height: 35px;
+      margin: auto;
+    }
+  }
+}

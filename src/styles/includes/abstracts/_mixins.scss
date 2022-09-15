@@ -1,0 +1,70 @@
+// Mixins
+@mixin clearFix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// For Extends
+.unique-heading {
+  text-transform: uppercase;
+  display: inline-block;
+  font-size: 3rem;
+  background-image: linear-gradient(
+    to right,
+    $lightColor,
+    $darkColor 
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: 2px;
+  transition: all .2s;
+
+  &:hover {
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: 10px 5px 10px rgba($blackColor, .2);
+  }
+}
+
+
+///// Media Query ///////
+
+/*
+
+0 - 600 -> phones.>>>>>>> phone
+
+600 - 900 -> tablet 
+
+900 - 1200 -> lanscape 
+
+1200 - 1800 .> normal style
+
+1800 - .> big descktops
+// 1em is == 16px, em the best for mq
+// px is media query not effected by the font-size of the root
+
+*/
+
+
+@mixin media($thePoint) {
+  @if $thePoint == phone {
+    @media (max-width: 37.5em) {@content}
+  };
+
+  @if $thePoint == tablet {
+    @media (max-width: 56.25em) {@content}
+  };
+
+  @if $thePoint == tablet-land {
+    @media (max-width: 75em) {@content}
+  };
+
+  @if $thePoint == descktop {
+    @media (min-width: 112.5em) {@content}
+  };
+}
+
+

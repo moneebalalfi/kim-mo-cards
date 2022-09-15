@@ -1,0 +1,30 @@
+@import "./includes/abstracts/variables";
+@import "./includes/abstracts/mixins";
+
+@import "./includes/bases/base";
+@import "./includes/bases/utilities";
+@import "./includes/bases/animations";
+
+@import "./includes/components/navpage";
+@import "./includes/components/button";
+@import "./includes/components/imagesGroup";
+@import "./includes/components/popup";
+@import "./includes/components/video";
+
+@import "./includes/layouts/grid";
+// Header
+@import "./includes/layouts/header";
+// About
+@import "./includes/layouts/about";
+//Features
+@import "./includes/layouts/features";
+//Cards
+@import "./includes/layouts/cards";
+//Team
+@import "./includes/layouts/team";
+//SIgnup
+@import "./includes/layouts/signup";
+@import "./includes/components/form";
+
+//Footer
+@import "./includes/layouts/footer";

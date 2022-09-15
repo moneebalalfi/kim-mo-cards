@@ -1,0 +1,114 @@
+.form {
+  &-group:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  &-input {
+    font-size: 1.5rem;
+    font-family: inherit;
+    color: $whiteColor;
+    font-weight: 700;
+    padding: 2rem 3rem;
+    border-radius: 3px;
+    background-color: rgba($grayColor, .5);
+    border: none;
+    border-bottom: 4px solid transparent;
+    width: 60%;
+    transition: all .3s;
+
+    @include media(tablet) {
+      width: 100%;
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba($blackColor, .5);
+      border-bottom: 4px solid green;
+    }
+
+    &:focus:invalid {
+      border-bottom: 4px solid orangered;
+    }
+
+    &::-webkit-input-placeholder {
+      color: $whiteColor;
+      font-weight: 700;
+    }
+
+    &:placeholder-shown + .form-label {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-3rem);
+    }
+  }
+
+  &-label {
+    font-size: 1.3rem;
+    font-weight: 700;
+    display: block;
+    margin: 1rem 0.3rem .7rem;
+    transition: all .3s;
+  }
+
+  &-radio-group {
+    float: left;
+    width: 40%;
+    margin-right: 1rem;
+  }
+
+  &-radio-input {
+    display: none;
+  }
+
+  &-radio-label {
+    position: relative;
+    font-size: 1.7rem;
+    cursor: pointer;
+    padding-left: 4rem;
+
+    @include media(tablet) {
+      color: $whiteColor;
+    }
+  }
+
+  &-radio-button {
+    height: 3rem;
+    width: 3rem;
+    border: 5px solid $medColor;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    top: -3px;
+    left: 0;
+
+
+    &::after {
+      content: "";
+      height: 1.2rem;
+      width: 1.2rem;
+      display: block;
+      background-color: $medColor;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+    }
+  }
+  &-radio-input:checked ~ &-radio-label &-radio-button::after {
+    opacity: 1;
+  }
+
+  &-submit {
+    width: 60%;
+    padding: 1.3rem;
+    margin-top: 3.5rem;
+    border: none;
+    outline: none;
+
+    @include media(tablet) {
+      width: 100%;
+    }
+  }
+}

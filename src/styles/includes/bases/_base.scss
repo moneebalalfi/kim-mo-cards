@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap");
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%; // 1rem = 10px | 10px/16px = 62.5%
+
+  @include media(tablet-land) {
+    // width < 900 ?
+    font-size: 56.25%; // 1rem = 9px | 9/16 = 56.25%
+  }
+
+  @include media(tablet) {
+    // width < 600 ?
+    font-size: 50%; // 1rem = 8px, 8/16 = 50%
+  }
+
+  @include media(descktop) {
+    font-size: 75%; // 1rem = 12 | 12/16 = 75%
+  }
+}
+
+body {
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+  color: $grayColor;
+  padding: 2rem;
+
+  @include media(tablet) {
+    padding: 0;
+  }
+}
+
+::selection {
+  background-color: orangered;
+  color: #fff;
+}

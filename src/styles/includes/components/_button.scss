@@ -1,0 +1,58 @@
+// Default Animated button
+.btn {
+  &,
+  &:link,
+  &:visited {
+    position: relative;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 2.5rem 4rem;
+    display: inline-block;
+    transition: all 0.2s;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 15px rgba($blackColor, 0.3);
+
+      &::after {
+        transform: scaleX(1.2) scaleY(1.3);
+        opacity: 0;
+      }
+    }
+    &:active {
+      transform: translateY(-1px);
+      box-shadow: 0 5px 10px rgba($blackColor, 0.1);
+    }
+    &:after {
+      content: "";
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+      border-radius: 100px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      transition: all 0.4s;
+    }
+  }
+  &-white {
+    background-color: $whiteColor;
+    color: $grayColor;
+    font-size: 1.6rem;
+    border-radius: 100px;
+    &:after {
+      background-color: $whiteColor;
+    }
+  }
+
+  &-green {
+    background-color: $medColor;
+    color: $whiteColor;
+    font-size: 1.8rem;
+    border-radius: 100px;
+    &:after {
+      background-color: $medColor;
+    }
+  }
+}

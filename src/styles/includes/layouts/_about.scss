@@ -1,0 +1,37 @@
+
+.about-section {
+  background-color: $backgroundGray;
+  padding: 23rem 0;
+  margin-top: -25vh;
+
+  .unique-heading {
+    font-size: 3rem;
+
+    @include media(tablet) {
+      font-size: 2.6rem;
+    }    
+  }
+  
+  .paragraph {
+    font-weight: 500;
+    font-size: 1.6rem;
+    color: $lightGrayColor;
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
+  }
+
+  .about-button {
+    background-color: $lightColor;
+    color: $whiteColor;
+    font-size: 1.6rem;
+    font-weight: bold;;
+    border: 1px solid $lightColor;
+    border-radius: 10px;
+    padding: 10px 13px;
+    display: block;
+    &:hover {
+      color: $whiteColor;
+    }
+  }
+} 

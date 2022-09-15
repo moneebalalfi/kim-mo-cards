@@ -1,0 +1,112 @@
+
+.popup {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2500;
+  background-color: rgba($blackColor, .8);
+  opacity: 0;
+  visibility: hidden;
+  transition: all .6s;
+  
+  @supports (backdrop-filter: blur(10px)){
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba($blackColor, .5);
+  }
+
+  &:target {
+    opacity: 1;
+    visibility: visible;  
+  }
+
+  &-box {
+    display: table;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 75%;
+    background-color: $whiteColor;
+    box-shadow: 0 3rem 7rem rgba($blackColor, .2);
+    border-radius: 5px;
+
+    &-images {
+      width: 33.3333%;
+      display: table-cell;
+
+      &-img {
+        width: 100%;
+        display: block;
+        &:first-child {
+          border-bottom: 2px solid $grayColor;
+        }
+      }
+
+      @include media(tablet-land){
+        display: none;
+      }
+    }
+
+    &-texts {
+      width: 66.66667%;
+      display: table-cell;
+      vertical-align: middle;
+      padding: 30px 50px;
+      backface-visibility: hidden;
+      
+      &-close {
+        transition: all .5s;
+        &:link, &:visited {
+          font-size: 40px;
+          color: #777;
+          position: absolute;
+          top: 5px;
+          right: 15px;
+        }
+
+        &:hover {
+          color: $medColor;
+          background-color: $whiteColor;
+          transform: scale(1.2);
+        }
+      }
+
+      &-h2 {
+        font-size: 40px;
+      }
+
+      &-text {
+        margin-bottom: 50px;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 1.6;
+
+        -moz-column-count: 2;
+        -moz-column-gap: 20px;
+        -moz-column-rule: 2px solid $darkGrayColor;
+
+        column-count: 2;
+        column-gap: 20px;
+        column-rule: 2px solid $darkGrayColor;
+
+        @include media(tablet){
+          column-gap: normal;
+          column-count: auto;
+        }
+      }
+
+      @include media(tablet){
+        width: 100%;
+      }
+    }
+  }
+}
+
+
+
+
+ 
